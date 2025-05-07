@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+<!-- SessionFactory configuration begins -->
+<session-factory>
+
+    <!-- JDBC Driver Class for MySQL -->
+    <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+
+    <!-- JDBC URL for connecting to MySQL Database, replace 'localhost' with actual DB host if necessary -->
+    <property name="connection.url">jdbc:mysql://localhost:3306/event_management</property>
+
+    <!-- Database username for MySQL connection -->
+    <property name="connection.username">root</property>
+
+    <!-- Database password for MySQL connection -->
+    <property name="connection.password">root</property>
+
+    <!-- Hibernate dialect for MySQL 8.x version -->
+    <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+    <!-- Automatic schema generation, 'update' makes Hibernate update the schema if necessary -->
+    <property name="hbm2ddl.auto">update</property>
+
+    <!-- Optionally enable the following properties to show and format SQL queries for debugging -->
+    <!--<property name="show_sql">true</property>-->
+    <!--<property name="format_sql">true</property>-->
+
+    <!-- Define Hibernate entity classes that will be mapped to database tables -->
+    <mapping class="com.event1.entity.Event" />      <!-- Event entity mapping -->
+    <mapping class="com.event1.entity.Venue" />      <!-- Venue entity mapping -->
+    <mapping class="com.event1.entity.Organizer" />  <!-- Organizer entity mapping -->
+    <mapping class="com.event1.entity.Participants" /> <!-- Participants entity mapping -->
+    <mapping class="com.event1.entity.Vendor" />     <!-- Vendor entity mapping -->
+
+</session-factory>
+<!-- SessionFactory configuration ends -->
+
+</hibernate-configuration>
